@@ -5,6 +5,8 @@ body {
     font: var(--body-font);
     letter-spacing: 0.5px;
     color: #282A2A;
+    scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 
 *, *::before, *::after { 
@@ -101,7 +103,7 @@ h1 {
     top:50%;
     text-align:center;
     color:var(--accent-hex);
-    font:800 2.5rem 'Abril Fatface';
+    font:800 2.5rem var(--display);
     text-transform:uppercase;
 }
 
@@ -110,10 +112,56 @@ h2 {
     display:block;
     margin-top:-20px;
     text-align:center;
-    font:300 1rem 'Work Sans';
-    text-transform:lowercase;
+    font:300 1rem var(--sans);
+    text-transform:capitalize;
     letter-spacing:2.25px;
 }
+
+/** BUTTONS **/
+
+#top {
+    position:fixed;
+    right:30px;
+    bottom:70px;
+    font-size:50px;
+    border:0;
+    background:none;
+    color:var(--accent-hex);
+    z-index:9999;
+}
+
+#bottom {
+    position:fixed;
+    right:30px;
+    bottom:20px;
+    font-size:50px;
+    border:0;
+    background:none;
+    color:var(--accent-hex);
+    z-index:9999;
+}
+
+/** SCROLLBAR **/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background:var(--clear);
+}
+  
+::-webkit-scrollbar-thumb {
+  background: var(--accent-hex);
+  border:1px solid var(--gray-hex);
+  border-radius:20px;
+}
+  
+  /** SELECTION **/
+  
+::-moz-selection { background: rgba(var(--accent),0.3); color:var(--white-hex); }
+::selection { background: rgba(var(--accent),0.3); color:var(--white-hex); }
+  
 
 /** MAIN **/
 
@@ -161,7 +209,7 @@ main {
 .about_me .about_img h3 {
     display:block;
     text-align:center;
-    font:300 1rem 'Work Sans';
+    font:300 1rem var(--sans);
     text-transform:lowercase;
     letter-spacing:2.25px;
 }
